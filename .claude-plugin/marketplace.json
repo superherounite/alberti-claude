@@ -1,0 +1,22 @@
+{
+  "name": "alberti",
+  "owner": {
+    "name": "Super Hero Unite, Inc.",
+    "email": "tech@super-hero.io"
+  },
+  "metadata": {
+    "description": "Claude Code plugins for Alberti, the design editor with 3D layers, click prototypes and game engine export.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "alberti",
+      "source": "./plugins/alberti",
+      "description": "Read and edit the design open in the Alberti desktop app: layers, components, variables, design intent, prototype, motion, 3D models and Unity, Unreal and Omniverse export.",
+      "version": "0.1.0",
+      "homepage": "https://alberti.design",
+      "license": "MIT",
+      "keywords": ["alberti", "design", "figma", "ui", "prototype", "unity", "unreal", "omniverse", "3d", "mcp"]
+    }
+  ]
+}
