@@ -5,22 +5,23 @@ description: Design in Alberti through its MCP server. Use when the user asks to
 
 # Working in Alberti
 
-Alberti is a design editor (Figma-compatible documents) with 3D layers, click prototypes, layer motion and export to game engines. The `alberti` MCP server in this plugin talks to the **Alberti desktop app running on this computer**: every tool reads or edits the design open in that app, live, and every edit is one undo step the user can reverse with ⌘Z / Ctrl+Z. If the file is a server file, edits save and reach collaborators in real time.
+Alberti is a design editor (Figma-compatible documents) with 3D layers, click prototypes, layer motion and export to game engines. The `alberti` MCP server (https://alberti.design/mcp) works through **the Alberti window the user has open**, in the browser or the desktop app: every tool reads or edits the designs open there, live, while the user watches, and every edit is one undo step they can reverse with ⌘Z / Ctrl+Z. Server files save and reach collaborators in real time. The first time, Claude asks the user to sign in with their Alberti (Google) account and allow access.
 
 ## 1. Connect first
 
 Call `alberti_status` before anything else. It returns the signed-in user, the open document, its pages and screens, the selection and whether there is a design intent brief.
 
-If the call fails or the tools are missing, tell the user what to do and stop. Do not try to start the app yourself.
+If the call fails, tell the user what to do and stop. Do not try to open Alberti yourself.
 
 | Symptom | What the user does |
 |---|---|
-| Connection refused, no `alberti` tools | Install and open the Alberti desktop app (https://alberti.design/download). It listens on `http://127.0.0.1:7621/mcp` while it runs. |
-| "Claude Code is turned off in Alberti" | Alberti → Settings → Server & team → Claude Code → turn on. |
-| "No design is open in Alberti" | Open or create a design in the app. |
-| Export says "not a server file" | Sign in to Alberti; new designs become server files on their first change. |
+| "Alberti is not open for …" | Open https://alberti.design (or the desktop app, https://alberti.design/download), sign in with the same account, open a design. |
+| "Claude is turned off in Alberti" | Alberti → Settings → Server & team → Claude → turn on. |
+| "No design is open in Alberti" | Open or create a design. |
+| Asked to sign in again, or 401 | Reconnect the Alberti connector (the grant was revoked or expired). |
+| Export says "not a server file" | New designs become server files on their first change while signed in; local `.alberti` files must be saved to the server first. |
 
-The web version of Alberti cannot be reached from Claude Code; the desktop app is required.
+If the user has several Alberti windows open, the one they used last is the one you work in.
 
 ## 2. Design to the intent
 

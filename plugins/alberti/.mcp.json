@@ -2,7 +2,7 @@
   "mcpServers": {
     "alberti": {
       "type": "http",
-      "url": "http://127.0.0.1:7621/mcp"
+      "url": "https://alberti.design/mcp"
     }
   }
 }
