@@ -1,6 +1,6 @@
 # Alberti MCP tools
 
-Generated from the app's catalog (137 tools). Every tool also takes optional `document_id` and `page_id` to work on a tab or page other than the active one.
+Generated from the app's catalog (138 tools). Every tool also takes optional `document_id` and `page_id` to work on a tab or page other than the active one.
 
 ## Alberti's own
 
@@ -20,6 +20,7 @@ Generated from the app's catalog (137 tools). Every tool also takes optional `do
 | `alberti_insert_3d_model` | edit | Insert a 3D model as a 3D layer on the current page (a frame that renders the model; camera and lighting are set in the Design panel). GLB, glTF (single file), OBJ or FBX, from a path on this computer or a URL. With a server file the model is uploaded and converted for engine export. Optional position and size in page coordinates. |
 | `alberti_list_server_files` | read | List the Alberti server files the signed-in user can open, most recently edited first, with their workspace, project and share link. |
 | `alberti_open_server_file` | edit | Open a server file in a new tab of Alberti (it becomes the active document once it arrives, usually within seconds). Then call list_documents or alberti_status. |
+| `alberti_new_design` | edit | Start a new design in a new tab of Alberti and make it the active document; works from the start screen with nothing open. Optionally name it and add a first screen (a top-level frame) of the given size, selected and in view. While the user is signed in, the design becomes a server file on its first change. Then call alberti_status. |
 | `alberti_export_engine` | edit | Export the document (or only the given screens) for a game engine on the Alberti server: Unity with UI Toolkit or uGUI, Unreal, or Omniverse. Works on server files. Returns the job report (how faithfully each layer came across) and a download URL for the zip, valid for a limited time. Can take a minute. |
 
 ## Editor

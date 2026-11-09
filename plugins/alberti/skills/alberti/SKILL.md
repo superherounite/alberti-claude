@@ -17,7 +17,7 @@ If the call fails, tell the user what to do and stop. Do not try to open Alberti
 |---|---|
 | "Alberti is not open for …" | Open https://alberti.design (or the desktop app, https://alberti.design/download), sign in with the same account, open a design. |
 | "Claude is turned off in Alberti" | Alberti → Settings → Server & team → Claude → turn on. |
-| "No design is open in Alberti" | Open or create a design. |
+| "No design is open in Alberti" | Start one yourself with `alberti_new_design` (name, first screen size), or open one with `alberti_list_server_files` and `alberti_open_server_file`. |
 | Asked to sign in again, or 401 | Reconnect the Alberti connector (the grant was revoked or expired). |
 | Export says "not a server file" | New designs become server files on their first change while signed in; local `.alberti` files must be saved to the server first. |
 
@@ -68,7 +68,7 @@ Alberti keeps the *why* of a design in the file:
 
 ## 6. Files
 
-`alberti_list_server_files` lists the server files the user can open, with share links; `alberti_open_server_file` opens one in a new tab. `list_documents` lists the open tabs; pass `document_id` (and `page_id`) to any tool to work on a tab other than the active one.
+`alberti_list_server_files` lists the server files the user can open, with share links; `alberti_open_server_file` opens one in a new tab; `alberti_new_design` starts a new design (works from the start screen). These three need no open design. `list_documents` lists the open tabs; pass `document_id` (and `page_id`) to any tool to work on a tab other than the active one.
 
 ## Etiquette
 
